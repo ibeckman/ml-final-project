@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
                                 with open("./data/" +str(current_year)+"_processed.csv", 'r') as outfile:
                                     next(outfile)
-                                    x_test = feat2.train_feature(outfile)
+                                    x_test = feat2.test_feature(outfile)
                                         
                                     squared_X = x_test.copy()
                                     # now square the data in squared_X
