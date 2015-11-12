@@ -50,8 +50,8 @@ if __name__ == "__main__":
     
     argparser = argparse.ArgumentParser()
     argparser.add_argument("--vec_int", help="Maximum Number of SVR Iterations",type=list, default=[2], required=False)
-    argparser.add_argument("--iter", help="Maximum Number of SVR Iterations",type=list, default=[1000], required=False)
-    argparser.add_argument("--feat", help="Maximum Number of Features", type=list, default=[50000], required=False)
+    argparser.add_argument("--iter", help="Maximum Number of SVR Iterations",type=list, default=[500,750,1000,1250,1500,1750,2000], required=False)
+    argparser.add_argument("--feat", help="Maximum Number of Features", type=list, default=[40000,50000,60000,70000,80000,90000], required=False)
     argparser.add_argument("--norm", help="Maximum Number of Features", type=list, default=['l1'], required=False)
     argparser.add_argument("--ngram", help="Maximum Number of Features", type=list, default=[1], required=False)
     argparser.add_argument("--kernel", help="Maximum Number of Features", type=list, default=['linear'], required=False)
