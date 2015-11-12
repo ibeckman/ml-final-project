@@ -52,7 +52,7 @@ if __name__ == "__main__":
     argparser.add_argument("--vec_int", help="Maximum Number of SVR Iterations",type=list, default=[2], required=False)
     argparser.add_argument("--iter", help="Maximum Number of SVR Iterations",type=list, default=[1000], required=False)
     argparser.add_argument("--feat", help="Maximum Number of Features", type=list, default=[50000], required=False)
-    argparser.add_argument("--norm", help="Maximum Number of Features", type=list, default=['L1'], required=False)
+    argparser.add_argument("--norm", help="Maximum Number of Features", type=list, default=['l1'], required=False)
     argparser.add_argument("--ngram", help="Maximum Number of Features", type=list, default=[1], required=False)
     argparser.add_argument("--c", help="C value to use", type=list, default=[1], required=False)
     argparser.add_argument("--debug", help="print debug statements", type=int, default=1, required=False)
@@ -72,7 +72,18 @@ if __name__ == "__main__":
                 for feat in args.feat:
                     for norm in args.norm:
                         for ngram in args.ngram:
+                            
+                            ###############################################################################
+                            # creating vectorizor
+                            if args.debug == 1:
+                                print "0.STARTING: creating vectorizor [ " + str(vec_int)+ "]"
+                                print "max features [ " + str(feat) +"]"
+                                print "normalization [ " + str(norm) +"]"
+                                print "ngrams [ 1 to " + str(ngram)+ "]"
                             feat2 = Featurizer(vec_int, feat, norm, ngram)
+                            if args.debug == 1:
+                                print "0.FINISHED: creating vectorizor"
+                            
                             ###############################################################################
                             # load X values for train set and vectorize them
                             if args.debug == 1:
